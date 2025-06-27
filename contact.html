@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ShopEase</title>
+    <meta name="description" content="Get in touch with ShopEase customer service. We're here to help with your questions and concerns.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header sticky">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1><a href="index.html" style="text-decoration: none; color: inherit;">ShopEase</a></h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="categories.html" class="nav-link">Categories</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 80px;">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>We're here to help! Get in touch with our customer service team</p>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>Have questions about our products or need assistance with your order? We'd love to hear from you!</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <h3>📞 Phone</h3>
+                                <p>+91 98765 43210</p>
+                                <p>Mon-Fri: 9:00 AM - 6:00 PM IST</p>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <h3>📧 Email</h3>
+                                <p>info@shopease.com</p>
+                                <p>We respond within 24 hours</p>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <h3>📍 Address</h3>
+                                <p>ShopEase Private Limited<br>
+                                123 Business Street<br>
+                                Tech City, Mumbai 400001<br>
+                                Maharashtra, India</p>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <h3>🕒 Business Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 10:00 AM - 4:00 PM<br>
+                                Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h2>Send us a Message</h2>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="order-inquiry">Order Inquiry</option>
+                                    <option value="product-question">Product Question</option>
+                                    <option value="technical-support">Technical Support</option>
+                                    <option value="refund-return">Refund/Return</option>
+                                    <option value="general-inquiry">General Inquiry</option>
+                                    <option value="complaint">Complaint</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Please provide details about your inquiry..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>How do I track my order?</h3>
+                        <p>Once your order is shipped, you'll receive a tracking number via email. You can use this to track your package on our website or the courier's website.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What is your return policy?</h3>
+                        <p>We offer a 7-day return policy for most items. Products must be in original condition with tags attached. Please check our <a href="refund.html">Refund Policy</a> for complete details.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Do you offer cash on delivery?</h3>
+                        <p>Yes, we offer cash on delivery for orders within India. COD charges may apply based on your location and order value.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How long does delivery take?</h3>
+                        <p>Standard delivery takes 3-5 business days within major cities and 5-7 business days for other locations. Express delivery options are available.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopEase</h3>
+                    <p>Your trusted online shopping destination for quality products at affordable prices.</p>
+                    <div class="contact-info">
+                        <p>📧 info@shopease.com</p>
+                        <p>📞 +91 98765 43210</p>
+                        <p>📍 123 Business Street, Tech City, Mumbai 400001</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="contact.html">Track Your Order</a></li>
+                        <li><a href="refund.html">Returns</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-methods {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method h3 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method p {
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .faq-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e293b;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .faq-item h3 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .faq-item a {
+            color: #4f46e5;
+            text-decoration: none;
+        }
+
+        .faq-item a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</body>
+</html>

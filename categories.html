@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - ShopEase</title>
+    <meta name="description" content="Browse our product categories - Electronics, Home Essentials, and Accessories at ShopEase.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header sticky">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1><a href="index.html" style="text-decoration: none; color: inherit;">ShopEase</a></h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="categories.html" class="nav-link active">Categories</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 80px;">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Product Categories</h1>
+                <p>Discover our wide range of quality products organized by category</p>
+            </div>
+        </section>
+
+        <!-- Electronics Category -->
+        <section class="category-section" id="electronics">
+            <div class="container">
+                <h2>Electronics</h2>
+                <div class="products-grid" id="electronics-grid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessories Category -->
+        <section class="category-section" id="accessories">
+            <div class="container">
+                <h2>Accessories</h2>
+                <div class="products-grid" id="accessories-grid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Home Essentials Category -->
+        <section class="category-section" id="home">
+            <div class="container">
+                <h2>Home Essentials</h2>
+                <div class="products-grid" id="home-grid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopEase</h3>
+                    <p>Your trusted online shopping destination for quality products at affordable prices.</p>
+                    <div class="contact-info">
+                        <p>📧 info@shopease.com</p>
+                        <p>📞 +91 98765 43210</p>
+                        <p>📍 123 Business Street, Tech City, Mumbai 400001</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="contact.html">Track Your Order</a></li>
+                        <li><a href="refund.html">Returns</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load categories when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCategoryProducts();
+            
+            // Check if there's a hash in the URL and scroll to that category
+            if (window.location.hash) {
+                const categoryId = window.location.hash.substring(1);
+                const categoryElement = document.getElementById(categoryId);
+                if (categoryElement) {
+                    setTimeout(() => {
+                        categoryElement.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        });
+
+        function loadCategoryProducts() {
+            const categories = ['electronics', 'accessories', 'home'];
+            
+            categories.forEach(category => {
+                const grid = document.getElementById(`${category}-grid`);
+                const products = window.categoryData[category];
+                
+                if (grid && products) {
+                    grid.innerHTML = products.map(product => `
+                        <div class="product-card">
+                            <img src="${product.image}" alt="${product.name}">
+                            <div class="product-info">
+                                <h3>${product.name}</h3>
+                                <p class="price">${product.price}</p>
+                                <a href="product.html?id=${product.id}" class="btn btn-secondary">View Product</a>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            });
+        }
+    </script>
+
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-section {
+            padding: 60px 0;
+        }
+
+        .category-section:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .category-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1e293b;
+            text-align: center;
+        }
+    </style>
+</body>
+</html>

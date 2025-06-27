@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - ShopEase</title>
+    <meta name="description" content="View detailed product information and specifications at ShopEase.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header sticky">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1><a href="index.html" style="text-decoration: none; color: inherit;">ShopEase</a></h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="categories.html" class="nav-link">Categories</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 80px;">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> > 
+                <a href="categories.html">Categories</a> > 
+                <span id="product-breadcrumb">Product</span>
+            </nav>
+            
+            <div class="product-details" id="product-container">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopEase</h3>
+                    <p>Your trusted online shopping destination for quality products at affordable prices.</p>
+                    <div class="contact-info">
+                        <p>📧 info@shopease.com</p>
+                        <p>📞 +91 98765 43210</p>
+                        <p>📍 123 Business Street, Tech City, Mumbai 400001</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="contact.html">Track Your Order</a></li>
+                        <li><a href="refund.html">Returns</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProductDetails();
+        });
+
+        function loadProductDetails() {
+            const productId = getUrlParameter('id');
+            const product = window.productData[productId];
+            const container = document.getElementById('product-container');
+            const breadcrumb = document.getElementById('product-breadcrumb');
+
+            if (product) {
+                document.title = `${product.name} - ShopEase`;
+                breadcrumb.textContent = product.name;
+                
+                container.innerHTML = `
+                    <div class="product-layout">
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="product-info">
+                            <h1>${product.name}</h1>
+                            <p class="price">${product.price}</p>
+                            <div class="product-description">
+                                <p>${product.description}</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-primary" onclick="buyNow('${product.name}', '${product.price}')">
+                                    Buy Now
+                                </button>
+                                <button class="btn btn-outline" onclick="addToCart('${product.name}', '${product.price}')">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-specifications">
+                        <h2>Specifications</h2>
+                        <ul>
+                            ${product.specifications.map(spec => `<li>${spec}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div class="error-message">
+                        <h2>Product Not Found</h2>
+                        <p>The product you're looking for doesn't exist.</p>
+                        <a href="categories.html" class="btn btn-primary">Browse Categories</a>
+                    </div>
+                `;
+            }
+        }
+
+        function buyNow(name, price) {
+            alert(`Thank you for your interest in ${name}! In a real store, this would redirect to checkout with ${price}.`);
+        }
+
+        function addToCart(name, price) {
+            alert(`${name} (${price}) has been added to your cart!`);
+        }
+    </script>
+
+    <style>
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .breadcrumb a {
+            color: #4f46e5;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .product-info .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4f46e5;
+            margin-bottom: 2rem;
+        }
+
+        .product-description {
+            margin-bottom: 2rem;
+        }
+
+        .product-description p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #64748b;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-specifications {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .product-specifications h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+        }
+
+        .product-specifications ul {
+            list-style: none;
+        }
+
+        .product-specifications li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #64748b;
+        }
+
+        .product-specifications li:before {
+            content: "✓";
+            color: #4f46e5;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .error-message {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .error-message h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-info h1 {
+                font-size: 2rem;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>
