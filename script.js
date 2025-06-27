@@ -194,21 +194,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 "Mobile app control"
             ]
         }
+         9: {
+            name: "Leather Wallet",
+            price: "₹599",
+            image: "images/leather-wallet.jpg",
+            description: "Stylish leather wallet with multiple compartments and a secure cash slot.",
+            specifications: [
+                "Leather construction",
+                "Multiple compartments",
+                "Cash slot",
+                "Adjustable strap",
+                "Water-resistant"
+            ]
+        },
+        10: {
+            name: "Phone Case",
+            price: "₹299",
+            image: "images/phone-case.jpg",
+            description: "Durable phone case with shockproof protection and a secure cash slot.",
+            specifications: [
+                "Durable construction",
+                "Shockproof protection",
+                "Secure cash slot",
+                "Adjustable strap",
+                "Water-resistant"
+            ]
+        }
     };
     
     // Category data
     window.categoryData = {
         electronics: [
-            { id: 1, name: "Premium Wireless Headphones", price: "₹2,999", image: "images/wireless-headphones.jpg" },
+            { id: 1, name: "Premium Wireless Headphones", price: "₹2,999", image: "images/wireless-headphone.jpg" },
             { id: 2, name: "Fitness Smart Watch", price: "₹4,599", image: "images/smart-watch.jpg" },
             { id: 3, name: "Portable Bluetooth Speaker", price: "₹1,899", image: "images/bluetooth-speaker.jpg" },
-            { id: 5, name: "Wireless Gaming Mouse", price: "₹1,299", image: "images/gaming-mouse.jpg" },
-            { id: 6, name: "Fast Charging Power Bank", price: "₹1,599", image: "images/power-bank.jpg" }
+            { id: 5, name: "Wireless Gaming Mouse", price: "₹1,299", image: "images/wireless-mouse.jpg" },
+            { id: 6, name: "Fast Charging Power Bank", price: "₹1,599", image: "images/powerbank.jpg" }
         ],
         accessories: [
             { id: 4, name: "Adjustable Laptop Stand", price: "₹899", image: "images/laptop-stand.jpg" },
             { id: 7, name: "UV Protection Sunglasses", price: "₹799", image: "images/sunglasses.jpg" },
-            { id: 9, name: "Leather Wallet", price: "₹599", image: "images/wallet.jpg" },
+            { id: 9, name: "Leather Wallet", price: "₹599", image: "images/leather-wallet.jpg" },
             { id: 10, name: "Phone Case", price: "₹299", image: "images/phone-case.jpg" }
         ],
         home: [
